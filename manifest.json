@@ -33,13 +33,20 @@
         "sap.m": {}
       }
     },
-    "model": {
+    "models": {
       "i18n": {
         "type" : "sap.ui.model.resource.ResourceModel",
         "settings": {
           "bundleName": "sap.chet.openUI5.i18n.i18n"
         }
       }
+    },
+    "resources": {
+      "css": [
+        {
+            "uri" : "css/style.css"
+        }
+      ]
     }
   }
 }

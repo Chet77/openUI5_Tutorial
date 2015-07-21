@@ -1,11 +1,15 @@
-<mvc:View controllerName="sap.chet.openUI5.controller.App"
-  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
-  <Button
-    text="{i18n>showHelloButtonText}"
-    press="onShowHello"/>
-  <Input
-    description="Hello {/recipient/name}"
-    value="{/recipient/name}"
-    valueLiveUpdate="true"
-    width="60%"/>
+<mvc:View
+   controllerName="sap.chet.openUI5.controller.App"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   displayBlock="true">
+   <App class="sapUiDemoWT">
+      <pages>
+         <Page title="{i18n>homePageTitle}">
+            <content>
+              <mvc:XMLView viewName="sap.ui.demo.wt.view.HelloPanel"/>
+            </content>
+         </Page>
+      </pages>
+   </App>
 </mvc:View>
