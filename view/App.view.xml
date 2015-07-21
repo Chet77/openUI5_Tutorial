@@ -1,5 +1,11 @@
 <mvc:View controllerName="sap.chet.openUI5.controller.App"
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m">
-  <Button  press="onShowHello" text="Say Hello"/>
+  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Button
+    text="{i18n>showHelloButtonText}"
+    press="onShowHello"/>
+  <Input
+    description="Hello {/recipient/name}"
+    value="{/recipient/name}"
+    valueLiveUpdate="true"
+    width="60%"/>
 </mvc:View>
