@@ -4,14 +4,14 @@ sap.ui.define([
   "sap/ui/model/resource/ResourceModel"
 ], function(UIComponent, JSONModel, ResourceModel) {
   "use strict";
-  return UIComponent.extend("sap.ui.demo.wt.Component", {
+  return UIComponent.extend("sap.chet.openUI5.Component", {
     metadata: {
       manifest: "json"
     },
     init: function() {
-      // call the init function of the parent
+      //Call the init function of the parent
       UIComponent.prototype.init.apply(this, arguments);
-      // set data model
+      //Set data model
       var oData = {
         recipient: {
           name: "World"
@@ -20,9 +20,9 @@ sap.ui.define([
       var oModel = new JSONModel(oData);
       this.setModel(oModel);
 
-      // set i18n model
+      //set i18nModel
       var i18nModel = new ResourceModel({
-        bundleName: "sap.ui.demo.wt.i18n.i18n"
+        bundleName: "sap.chet.openUI5.i18n.i18n"
       });
       this.setModel(i18nModel, "i18n");
     }

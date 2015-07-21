@@ -17,11 +17,9 @@
          }'>
       </script>
       <script>
-        sap.ui.getCore().attachInit(function () {
-           sap.ui.xmlview({
-              viewName : "sap.chet.openUI5.view.App"
-           }).placeAt("content");
-        });
+        new sap.ui.core.ComponentContainer({
+          name : "sap.chet.openUI5"
+        }).placeAt("content");
       </script>
    </head>
    <body class="sapUiBody" id="content">

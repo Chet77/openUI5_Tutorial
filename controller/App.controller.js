@@ -6,23 +6,12 @@ sap.ui.define([
 ], function(Controller, MessageToast, JSONModel, ResourceModel) {
   "use strict";
   return Controller.extend("sap.chet.openUI5.controller.App", {
-    onInit : function (){
-      var oData = {
-        recipient : {
-          name : "World"
-        }
-      };
-      var oModel = new JSONModel(oData);
-      this.getView().setModel(oModel);
-
-      //Set i18nModel
-      var i18nModel = new ResourceModel({
-        bundleName : "sap.chet.openUI5.i18n.i18n"
-      });
-      this.getView().setModel(i18nModel, "i18n");    
-    },
     onShowHello : function () {
-      MessageToast.show("Hello World !!");
+      //Read from i18nModel
+      var oBundle = this.getView().getModel("i18n").getResourceBundle();
+      var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+      var sMsg = oBundle.getText("helloMsg", [sRecipient]);
+      MessageToast.show(sMsg);
     }
   });
 });
