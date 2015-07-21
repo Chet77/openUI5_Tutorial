@@ -4,8 +4,9 @@
     "_version": "1.1.0",
     "id": "sap.chet.openUI5",
     "type": "application",
-    "title": "Hello World",
-    "description": "Chet's version on GIT/Atom of walkthrough app from OpenUI5 version 1.30",
+    "i18n": "i18n/i18n.properties",
+  	"title": "{{appTitle}}",
+  	"description": "{{appDescription}}",
     "applicationVersion": {
       "version": "1.0.0"
     },
@@ -30,6 +31,14 @@
       "minUI5Version": "1.30",
       "libs": {
         "sap.m": {}
+      }
+    },
+    "model": {
+      "i18n": {
+        "type" : "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.chet.openUI5.i18n.i18n"
+        }
       }
     }
   }

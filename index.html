@@ -17,9 +17,11 @@
          }'>
       </script>
       <script>
-        new sap.ui.core.ComponentContainer({
-          name : "sap.chet.openUI5"
-        }).placeAt("content");
+        sap.ui.getCore().attachInit(function () {
+          new sap.ui.core.ComponentContainer({
+            name : "sap.chet.openUI5"
+          }).placeAt("content");
+        });
       </script>
    </head>
    <body class="sapUiBody" id="content">
