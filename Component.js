@@ -2,7 +2,7 @@ sap.ui.define([
   "sap/ui/core/UIComponent",
   "sap/ui/model/json/JSONModel",
   "sap/ui/model/resource/ResourceModel",
-  "sap/ui/demo/wt/controller/HelloDialog"
+  "sap/chet/openUI5/controller/HelloDialog"
 ], function(UIComponent, JSONModel, ResourceModel, HelloDialog) {
   "use strict";
   return UIComponent.extend("sap.chet.openUI5.Component", {
