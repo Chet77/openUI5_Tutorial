@@ -13,6 +13,7 @@
             </headerContent>
             <content>
               <mvc:XMLView viewName="sap.chet.openUI5.view.HelloPanel"/>
+              <mvc:XMLView viewName="sap.chet.openUI5.view.InvoiceList"/>
             </content>
          </Page>
       </pages>

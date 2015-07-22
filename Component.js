@@ -21,6 +21,12 @@ sap.ui.define([
       var oModel = new JSONModel(oData);
       this.setModel(oModel);
 
+      // set invoice model - local
+    	var oConfig = this.getMetadata().getConfig();
+    	var sNamespace = this.getMetadata().getManifestEntry("sap.app").id;
+    	var oInvoiceModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.invoiceLocal));
+    	this.setModel(oInvoiceModel, "invoice");
+
       //set i18nModel
       var i18nModel = new ResourceModel({
         bundleName: "sap.chet.openUI5.i18n.i18n"
