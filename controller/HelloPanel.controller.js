@@ -12,13 +12,16 @@ sap.ui.define([
     },
     _getDialog: function() {
       if (!this._oDialog) {
-        this._oDialog = sap.ui.xmlfragment("sap.chet.openUI5.view.HelloDialog");
+        this._oDialog = sap.ui.xmlfragment("sap.chet.openUI5.view.HelloDialog", this);
         this.getView().addDependent(this._oDialog);
       }
       return this._oDialog;
     },
     onOpenDialog: function() {
-      this._getDialog().open();
+      this.getOwnerComponent().helloDialog.open(this.getView());
+    },
+    onCloseDialog: function() {
+      this._getDialog().close();
     }
   });
 });

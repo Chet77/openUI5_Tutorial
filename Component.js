@@ -1,8 +1,9 @@
 sap.ui.define([
   "sap/ui/core/UIComponent",
   "sap/ui/model/json/JSONModel",
-  "sap/ui/model/resource/ResourceModel"
-], function(UIComponent, JSONModel, ResourceModel) {
+  "sap/ui/model/resource/ResourceModel",
+  "sap/ui/demo/wt/controller/HelloDialog"
+], function(UIComponent, JSONModel, ResourceModel, HelloDialog) {
   "use strict";
   return UIComponent.extend("sap.chet.openUI5.Component", {
     metadata: {
@@ -25,6 +26,9 @@ sap.ui.define([
         bundleName: "sap.chet.openUI5.i18n.i18n"
       });
       this.setModel(i18nModel, "i18n");
+
+      //set Dialog
+      this.helloDialog = new HelloDialog();
     }
   });
 });
