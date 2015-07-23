@@ -16,7 +16,7 @@ sap.ui.define([
     },
 
     onFilterInvoices: function(oEvent) {
-      var afilter = [];
+      var aFilter = [];
       var sQuery = this.getView().byId("invoiceList");
       if(sQuery){
           aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
