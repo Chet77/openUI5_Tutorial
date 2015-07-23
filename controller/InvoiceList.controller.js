@@ -16,12 +16,14 @@ sap.ui.define([
     },
 
     onFilterInvoices: function(oEvent) {
+      // build filter array
       var aFilter = [];
-      var sQuery = this.getView().byId("invoiceList");
-      if(sQuery){
-          aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
+      var sQuery = oEvent.getParameter("query");
+      if (sQuery) {
+        aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
       }
 
+      // filter binding
       var oList = this.getView().byId("invoiceList");
       var oBinding = oList.getBinding("items");
       oBinding.filter(aFilter);
