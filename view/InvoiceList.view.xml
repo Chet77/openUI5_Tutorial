@@ -1,12 +1,20 @@
 <mvc:View
-  controllerName="sap.ui.demo.wt.controller.InvoiceList"
+  controllerName="sap.chet.openUI5.controller.InvoiceList"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
   <List
+    id="invoiceList"
     headerText="{i18n>invoiceListTitle}"
     class="sapUiResponsiveMargin"
     width="auto"
     items="{invoice>/Invoices}" >
+    <headerToolbar>
+      <Toolbar>
+        <Title  text="{i18n>invoiceListTitle}"/>
+        <ToolbarSpacer/>
+        <SearchField  search="onFilterInvoices" width="50%"/>
+      </Toolbar>
+    </headerToolbar>
     <items>
        <ObjectListItem
           title="{invoice>Quantity} x {invoice>ProductName}"
@@ -20,7 +28,16 @@
               showMeasure: false
             }
           }"
-          numberUnit="{view>/currency}"/>
+          numberUnit="{view>/currency}"
+          numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+          <attributes>
+            <ObjectAttribute
+              text="{
+                path: 'invoice>Status',
+                formatter: '.formatter.statusText'
+              }"/>
+          </attributes>
+        </ObjectListItem>
     </items>
   </List>
 </mvc:View>
