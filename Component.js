@@ -2,8 +2,9 @@ sap.ui.define([
   "sap/ui/core/UIComponent",
   "sap/ui/model/json/JSONModel",
   "sap/ui/model/resource/ResourceModel",
-  "sap/chet/openUI5/controller/HelloDialog"
-], function(UIComponent, JSONModel, ResourceModel, HelloDialog) {
+  "sap/chet/openUI5/controller/HelloDialog",
+  "sap/ui/model/odata/v2/ODataModel"
+], function(UIComponent, JSONModel, ResourceModel, HelloDialog, ODataModel) {
   "use strict";
   return UIComponent.extend("sap.chet.openUI5.Component", {
     metadata: {
@@ -21,11 +22,15 @@ sap.ui.define([
       var oModel = new JSONModel(oData);
       this.setModel(oModel);
 
-      // set invoice model - local
-    	var oConfig = this.getMetadata().getConfig();
-    	var sNamespace = this.getMetadata().getManifestEntry("sap.app").id;
-    	var oInvoiceModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.invoiceLocal));
-    	this.setModel(oInvoiceModel, "invoice");
+      // //set invoice model - local
+    	// var oConfig = this.getMetadata().getConfig();
+    	// var sNamespace = this.getMetadata().getManifestEntry("sap.app").id;
+    	// var oInvoiceModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.invoiceLocal));
+    	// this.setModel(oInvoiceModel, "invoice");
+      //
+      // //set invoice model - remote
+			// var oConfig = this.getMetadata().getConfig();
+			// var oInvoiceModel = new ODataModel(oConfig.invoiceRemote);
 
       //set i18nModel
       var i18nModel = new ResourceModel({
